@@ -1,18 +1,17 @@
 # LVideo
 - A video format somewhat inspired by MinVideo. Can be insanely large but overall easy to understand without needing encodings.
-
+- Support 8-Bit Raw PCM Unencoded.
 ## Header:
 ```
-Name:             0x00-0x03 (4-Bytes)
-Version:          0x04      (1-Byte)
-Format:           0x05      (1-Byte)
-Compression:      0x06      (1-Byte)
-FPS:              0x07      (1-Byte)
-Width:            0x08-0x0B (4-Bytes)
-Height:           0x0C-0x0F (4-Bytes)
-Audio Offset:     0x10-0x05 (6-Bytes)
-Seg. OG Name:     0x16-0x1F (10-Bytes)
-
+Name:             0x00-0x03 (4-Bytes)   (String)
+Version:          0x04      (1-Byte)    (Integer)
+Format:           0x05      (1-Byte)    (Integer)
+Compression:      0x06      (1-Byte)    (Integer)
+FPS:              0x07      (1-Byte)    (Integer)
+Width:            0x08-0x0B (4-Bytes)   (Integer)
+Height:           0x0C-0x0F (4-Bytes)   (Integer)
+Audio Offset:     0x10-0x05 (6-Bytes)   (Integer)
+Seg. OG Name:     0x16-0x1F (10-Bytes)  (String)
 ```
 ### Understanding the Header:
 ```
