@@ -4,7 +4,7 @@
 ## Header:
 ```
 Name:             0x00-0x03 (4-Bytes)   (String)
-Version:          0x04      (1-Byte)    (Integer)
+Include Audio:    0x04      (1-Byte)    (Integer)
 Format:           0x05      (1-Byte)    (Integer)
 Compression:      0x06      (1-Byte)    (Integer)
 FPS:              0x07      (1-Byte)    (Integer)
