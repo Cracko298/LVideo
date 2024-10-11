@@ -25,7 +25,7 @@ Seg. OG Name:     0x16-0x1F (10-Bytes)  (String)
 ```
 ### Help Message:
 ```
-    python {os.path.basename(__file__)} [inputVideoFilePath] [videoFormat] [videoCompression] [includeAudio] [outputVideoFolderPath]
+    python LVideoGenerator.py [inputVideoFilePath] [videoFormat] [videoCompression] [includeAudio] [outputVideoFolderPath]
         Program Flags:
             [inputVideoFilePath]
                 Value: String
