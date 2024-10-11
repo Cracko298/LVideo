@@ -23,3 +23,28 @@ Seg. OG Name:     0x16-0x1F (10-Bytes)  (String)
 00000030 .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. : ................
 00000040 
 ```
+### Help Message:
+```
+    python {os.path.basename(__file__)} [inputVideoFilePath] [videoFormat] [videoCompression] [includeAudio] [outputVideoFolderPath]
+        Program Flags:
+            [inputVideoFilePath]
+                Value: String
+                    - PATH to your Input File (not a directory).
+            [videoFormat]
+                Value: Integer
+                    0 = RGB
+                    1 = BGR
+            [videoCompression]
+                Value: Integer
+                    0 = None
+                    1 = zlib
+                    2 = lz4
+                    3 = zstandard
+            [includeAudio]
+                Value: Integer
+                    0 = No (Do NOT Inlcude the Audio)
+                    1 = Yes (Include the Audio)
+            [outputVideoFolderPath]
+                Value: String
+                    - PATH to your Output Directory (not a file).
+```
