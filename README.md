@@ -1,6 +1,8 @@
 # LVideo
 - A video format somewhat inspired by MinVideo. Can be insanely large but overall easy to understand without needing encodings.
-- Supports 8-Bit Raw PCM Unencoded.
+- Supports 8-Bit and 16-Bit Raw PCM Uncompressed.
+
+
 ## Header:
 ```
 Name:             0x00-0x03 (4-Bytes)   (String)
