@@ -1,5 +1,5 @@
 # LVideo
-- A video format somewhat inspired by MinVideo. Can be insanely large but overall easy to understand without needing encodings.
+- A Video Format for Limited Computers/Environments and Microcontrollers, with little to no encoding/compression.
 - Supports 8-Bit and 16-Bit Raw PCM Uncompressed.
 
 
