@@ -1,4 +1,4 @@
-import os, cv2, sys, zlib, lz4.frame, zstandard
+import os, cv2, sys, zlib, lz4.frame, zstandard, lzma, bz2, gzip
 from PIL import Image
 from audio_extract import extract_audio
 
@@ -19,6 +19,9 @@ def helpMessage():
                     1 = zlib
                     2 = lz4
                     3 = zstandard
+                    4 = lzma
+                    5 = bzip2
+                    6 = gzip
             [includeAudio]
                 Value: Integer
                     0 = No (Do NOT Inlcude the Audio)
@@ -96,7 +99,7 @@ def compileFile(fps:int, width:int, height:int, format:int, compression:int, nam
         f.write(b'LVID')
         f.write(int.to_bytes(includeAudio, 1, byteorder='little', signed=False))
         f.write(int.to_bytes(format, 1, byteorder='little', signed=False))
-        f.write(int.to_bytes(compression, byteorder='little', signed=False))
+        f.write(int.to_bytes(compression, 1, byteorder='little', signed=False))
         f.write(int.to_bytes(fps, 1, byteorder='little', signed=False))
         f.write(int.to_bytes(width, 4, byteorder='little', signed=False))
         f.write(int.to_bytes(height, 4, byteorder='little', signed=False))
@@ -126,12 +129,18 @@ def extractRawFrameData(framePath, formats):
 def compressData(pixelArray, compressions):
     if compressions == 1:
         return zlib.compress(pixelArray)
-    elif videoCompression == 2:
+    elif compressions == 2:
         return lz4.frame.compress(pixelArray)
-    elif videoCompression == 3:
+    elif compressions == 3:
         cctx = zstandard.ZstdCompressor()
         return cctx.compress(pixelArray)
-    elif compressions == 0:
+    elif compressions == 4:
+        return lzma.compress(pixelArray)
+    elif compressions == 5:
+        return bz2.compress(pixelArray)
+    elif compressions == 6:
+        return gzip.compress(pixelArray)
+    else:
         return pixelArray
 
 if __name__ == '__main__':

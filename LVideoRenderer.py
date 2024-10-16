@@ -1,4 +1,4 @@
-import pyaudio, wave, threading, mmap, time, zlib, os, pygame, lz4.frame, zstandard, io
+import pyaudio, wave, threading, mmap, time, zlib, os, pygame, lz4.frame, zstandard, io, lzma, bz2, gzip
 from tkinter import filedialog
 
 def load_video_data(video_file):
@@ -38,6 +38,15 @@ def load_video_data(video_file):
         cctx = zstandard.ZstdDecompressor()
         audioData = cctx.decompress(compressedAudio)
         videoData = cctx.decompress(compressedVideoData)
+    elif videoCompression == 4:
+        audioData = lzma.decompress(compressedAudio)
+        videoData = lzma.decompress(compressedVideoData)
+    elif videoCompression == 5:
+        audioData = bz2.decompress(compressedAudio)
+        videoData = bz2.decompress(compressedVideoData)
+    elif videoCompression == 6:
+        audioData = gzip.decompress(compressedAudio)
+        videoData = gzip.decompress(compressedVideoData)
     else:
         audioData = compressedAudio
         videoData = compressedVideoData
