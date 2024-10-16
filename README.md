@@ -42,6 +42,9 @@ Seg. OG Name:     0x16-0x1F (10-Bytes)  (String)
                     1 = zlib
                     2 = lz4
                     3 = zstandard
+                    4 = lzma
+                    5 = bzip2
+                    6 = gzip
             [includeAudio]
                 Value: Integer
                     0 = No (Do NOT Inlcude the Audio)
