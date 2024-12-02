@@ -5,7 +5,7 @@
 
 ## Header:
 ```
-Name:             0x00-0x03 (4-Bytes)   (String)
+Header Ident:     0x00-0x03 (4-Bytes)   (String)
 Include Audio:    0x04      (1-Byte)    (Integer)
 Format:           0x05      (1-Byte)    (Integer)
 Compression:      0x06      (1-Byte)    (Integer)
